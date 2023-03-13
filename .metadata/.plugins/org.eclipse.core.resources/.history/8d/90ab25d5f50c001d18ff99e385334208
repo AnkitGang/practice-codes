@@ -1,0 +1,42 @@
+package recursion;
+
+public class check_number {
+	public static boolean check(int[] arr, int target) {
+		if(arr.length == 0) {
+			return false;
+		}
+		
+		if(arr[0] == target) {
+			return true;
+		}
+		
+		int[] smallArr = new int[arr.length - 1];
+		for(int i=1; i<arr.length; i++) {
+			smallArr[i - 1] = arr[i];
+		}
+		
+		return check(smallArr, target);
+	}
+	
+	public static boolean checkBetter(int[] arr,int StartIndex, int target) {
+		if(arr[StartIndex] == target) {
+			return true;
+		}
+		
+		boolean ans = checkBetter(arr, StartIndex + 1, target);
+		if(ans) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {6, 7, 3, 9, 1};
+		int target = 0;
+		System.out.println(check(arr, target));
+		System.out.println(checkBetter(arr, 0, target));
+	}
+}

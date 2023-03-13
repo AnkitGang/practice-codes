@@ -1,0 +1,48 @@
+package Linked_List;
+import java.util.*;
+
+class ListNode<T> {
+	T data;
+	ListNode<T> next;
+	public ListNode(T data) {
+		this.data = data;
+		next = null;
+	}
+}
+
+public class FindNode {
+	
+	static ListNode<Integer> find(ListNode<Integer> head){
+		ListNode<Integer> temp = head;
+		return temp;
+	}
+	
+	public static ListNode<Integer> takeInput(){
+		ListNode<Integer> head = null ,tail = null;
+		Scanner sc = new Scanner(System.in);
+		int data = sc.nextInt();
+		while(data != -1) {
+			ListNode<Integer> newNode = new ListNode<Integer>(data); 
+			if(head == null) {
+				head = newNode;
+				tail = newNode;
+			}
+			else{
+				tail.next = newNode;
+				tail = newNode;
+			}
+			data = sc.nextInt();
+		}
+		return head;
+	}
+	
+	
+	public static void main(String[] args) {
+		ListNode<Integer> head = takeInput();
+		while(head != null) {
+			System.out.print(head.data + " ");
+			head = head.next;
+		}
+	}
+
+}

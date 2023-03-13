@@ -1,0 +1,31 @@
+import java.util.*;
+
+abstract class GeometricObject {
+	private String color = "white";
+	private java.util.Date dateCreated;
+}
+
+public class RightangleTriangle extends GeometricObject {
+	double baze = 3.0;
+	double hite = 5.0;
+	
+	RightangleTriangle(){
+		
+	}
+	RightangleTriangle(double baze, double hite){
+		this.baze = baze;
+		this.hite = hite;
+	}
+	public void getArea() {
+		System.out.println("Area :" + (0.5 * baze * hite));
+	}
+	public void getData() {
+		System.out.println("Base = "+ baze + "\nHeight = "+ hite);
+	}
+	public static void main(String[] a1) {
+		RightangleTriangle t1 = new RightangleTriangle();
+		t1.getData();
+		t1.getArea();
+		RightangleTriangle t2 = new RightangleTriangle();
+	}
+}

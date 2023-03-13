@@ -1,0 +1,39 @@
+package Linked_List;
+import java.util.*;
+
+public class FindNode {
+	
+	static LinkedListNode<Integer> find(LinkedListNode<Integer> head){
+		LinkedListNode<Integer> temp = head;
+		return temp;
+	}
+	
+	public static LinkedListNode<Integer> takeInput(){
+		LinkedListNode<Integer> head = null ,tail = null;
+		Scanner sc = new Scanner(System.in);
+		int data = sc.nextInt();
+		while(data != -1) {
+			LinkedListNode<Integer> newNode = new LinkedListNode<Integer>(data); 
+			if(head == null) {
+				head = newNode;
+				tail = newNode;
+			}
+			else{
+				tail.next = newNode;
+				tail = newNode;
+			}
+			data = sc.nextInt();
+		}
+		return head;
+	}
+	
+	
+	public static void main(String[] args) {
+		LinkedListNode<Integer> head = takeInput();
+		while(head != null) {
+			System.out.print(head.data + " ");
+			head = head.next;
+		}
+	}
+
+}

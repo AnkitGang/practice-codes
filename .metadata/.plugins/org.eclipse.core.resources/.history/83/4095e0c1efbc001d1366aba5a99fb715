@@ -1,0 +1,47 @@
+package Stack;
+
+import Linked_List.ListNode;
+
+public class StackUsingLinkedList {
+	private ListNode head;
+	private ListNode top;
+	private ListNode prevTop;
+	
+	public StackUsingLinkedList(ListNode head){
+		this.head = head;
+		top = null;
+		prevTop = null;
+	}
+	
+	public void push(int elem) {
+		if(top == null) {
+			head = new ListNode(elem);
+			top = head;
+		}
+		else {
+			top.next = new ListNode(elem);
+			top = top.next;
+		}
+	}
+	
+	public int pop() throws StackEmptyException{
+		if(top == null) {
+			StackEmptyException e = new StackEmptyException();
+			throw e;
+		}
+		
+		return top.val;
+	}
+	
+	public int top() {
+		
+	}
+	
+	public int size() {
+		
+	}
+	
+	public boolean isEmpty() {
+		
+	}
+}

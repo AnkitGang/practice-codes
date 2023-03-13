@@ -1,0 +1,25 @@
+package recursion;
+
+public class check_number {
+	public static boolean check(int[] arr, int target) {
+		if(arr[0] == target) {
+			return true;
+		}
+		if(arr.length == 0) {
+			return false;
+		}
+		
+		int[] smallArr = new int[arr.length - 1];
+		for(int i=1; i<arr.length; i++) {
+			smallArr[i - 1] = arr[i];
+		}
+		
+		return check(smallArr, target);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr = {6, 7, 3, 9, 0, 1};
+		int target = 0;
+		System.out.println(check(arr, target));
+	}
+}

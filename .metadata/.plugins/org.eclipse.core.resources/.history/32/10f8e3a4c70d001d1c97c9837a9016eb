@@ -1,0 +1,17 @@
+package recursion;
+import java.util.*;
+
+public class first_index {
+	private static int index(int[] arr, int target, int startIndex) {
+		
+	}
+	
+	static int index(int[] arr, int target) {
+		return index(arr, target, 0);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

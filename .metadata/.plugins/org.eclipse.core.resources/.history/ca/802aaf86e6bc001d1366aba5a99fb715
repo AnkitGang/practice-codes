@@ -1,0 +1,33 @@
+package Stack;
+
+import Linked_List.ListNode;
+
+public class StackUsingLinkedList {
+	private ListNode head;
+	private ListNode top;
+	
+	public StackUsingLinkedList(ListNode head){
+		this.head = head;
+		top = null;
+	}
+	
+	public ListNode push(int elem) {
+		
+	}
+	
+	public int pop() {
+		
+	}
+	
+	public int top() {
+		
+	}
+	
+	public int size() {
+		
+	}
+	
+	public boolean isEmpty() {
+		
+	}
+}
