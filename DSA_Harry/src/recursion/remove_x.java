@@ -8,10 +8,10 @@ public class remove_x {
 			return "";
 		}
 		else if(str.charAt(0) == 'x') {
-			return remove(str.substring(1, str.length()));
+			return remove(str.substring(1));
 		}
 		
-		return str.charAt(0) + remove(str.substring(1, str.length()));
+		return str.charAt(0) + remove(str.substring(1));
 	}
 	
 	public static void main(String[] args) {

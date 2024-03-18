@@ -3,69 +3,110 @@ package sorting;
 import java.util.*;
 
 public class merge_sort {
-	void merge(int [] arr, int l, int m, int r) {
-		int n1 = m-l+1;
-		int n2 = r-m;
+	void mergeBetter(int[] arr, int startIndex, int endIndex) {  //we r not making two additional arrays left & right, we r 
+		int mid = (startIndex + endIndex)/2 ;  					//actually first sorting by using the index and storing in 'ans' array
+		int[] ans = new int[endIndex - startIndex + 1]; 		//and then copying it to the original array.
 		
-		// create temp array for storing left and right subarray
-		int [] L = new int[n1];
-		int [] R = new int[n2];
+		int i = startIndex;
+		int j = mid + 1;
+		int k = 0;
 		
-		for(int i=0; i<n1; i++) {
-			L[i] = arr[l+i];
-		}
-		for(int j=0; j<n2; j++) {
-			R[j] = arr[m+1+j];
-		}
-		
-		//initial index of first and second subarrays
-		int i=0;
-		int j=0;
-		
-		//initial index of merged array
-		int k=l;
-		
-		while(i<n1 && j<n2) {
-			if(L[i] < R[j]) {
-				arr[k] = L[i];
-				k++;
+		while(i <= mid && j <= endIndex) {
+			if(arr[i] < arr[j]) {
+				ans[k] = arr[i];
 				i++;
+				k++;
 			}
 			else {
-				arr[k] = R[j];
-				k++;
+				ans[k] = arr[j];
 				j++;
+				k++;
 			}
 		}
 		
-		//for storing remaining elements in L[] if any
-		while(i<n1) {
-			arr[k] = L[i];
-			k++;
+		while(i <= mid) {
+			ans[k] = arr[i];
 			i++;
+			k++;
 		}
 		
-		//for storing remaining elements in R[] if any
-		while(j<n2) {
-			arr[k] = R[j];
-			k++;
+		while(j <= endIndex) {
+			ans[k] = arr[j];
 			j++;
+			k++;
+		}
+		
+		for(int index = 0; index < ans.length; index++) {
+			arr[startIndex + index] = ans[index];
 		}
 	}
 	
 	void sort(int [] arr, int l, int r) {
-		if(l<r) {
-			//find middle point
-			int m = (l+r)/2;
-			
-			//sort the left and right arrays
-			sort(arr, l, m);
-			sort(arr, m+1, r);
-			
-			//merge the left and right arrays
-			merge(arr, l, m, r);
+		if(l >= r) {
+			return;
 		}
+		//find middle point
+		int m = (l + r) / 2;
+		
+		//sort the left and right arrays
+		sort(arr, l, m);
+		sort(arr, m+1, r);
+		
+		//merge the left and right arrays
+		//merge(arr, l, m, r);
+		mergeBetter(arr, l, r);
 	}
+	
+//	void merge(int [] arr, int l, int m, int r) {
+//		int n1 = m-l+1;
+//		int n2 = r-m;
+//		
+//		// create temp array for storing left and right subarray
+//		int [] L = new int[n1];
+//		int [] R = new int[n2];
+//		
+//		for(int i=0; i<n1; i++) {
+//			L[i] = arr[l+i];
+//		}
+//		for(int j=0; j<n2; j++) {
+//			R[j] = arr[m+1+j];
+//		}
+//		
+//		//initial index of first and second subarrays
+//		int i=0;
+//		int j=0;
+//		
+//		//initial index of merged array
+//		int k=l;
+//		
+//		while(i<n1 && j<n2) {
+//			if(L[i] < R[j]) {
+//				arr[k] = L[i];
+//				k++;
+//				i++;
+//			}
+//			else {
+//				arr[k] = R[j];
+//				k++;
+//				j++;
+//			}
+//		}
+//		
+//		//for storing remaining elements in L[] if any
+//		while(i<n1) {
+//			arr[k] = L[i];
+//			k++;
+//			i++;
+//		}
+//		
+//		//for storing remaining elements in R[] if any
+//		while(j<n2) {
+//			arr[k] = R[j];
+//			k++;
+//			j++;
+//		}
+//	}
+	
 	
 	static void print_array(int [] arr) {
 		for(int i=0; i<arr.length; i++) {

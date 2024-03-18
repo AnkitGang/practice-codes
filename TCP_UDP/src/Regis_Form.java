@@ -1,5 +1,3 @@
-module TCP_UDP;
-
 import java.awt.event.*;
 import java.awt.Font;
 import java.awt.Color;

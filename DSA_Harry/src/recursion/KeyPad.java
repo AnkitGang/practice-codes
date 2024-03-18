@@ -1,58 +1,41 @@
 package recursion;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class KeyPad {
-	public static String[] keyPadSubsequences(int n) {
-		if(n == 0) {
-			String ans[] = {""};
-		}
-		int temp = n;
-		int count = 0;
-		while(temp != 0) {
-			temp = temp/10;
-			count++;
-		}
-		String str = Characters(n%10);
-		String smallAns[] = keyPadSubsequences(n/10);
-		for(int i = 0; i < str.length(); i++) {
-			smallAns[i] = str.charAt(i);
+	public static String[] characters = {"/?", ".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+	
+	public static ArrayList<String> keyPadSubsequences(String str) {
+		if(str.length() == 0) {
+			ArrayList<String> baseRes = new ArrayList<>();
+			baseRes.add("");
+			return baseRes;
 		}
 		
+		char c = str.charAt(0);
+		ArrayList<String> smallRes = keyPadSubsequences(str.substring(1));
+		ArrayList<String> ans = new ArrayList<>();
 		
+		String valueOfC = characters[c - '0'];  //c is a string so to get the actual int value of c using Ascii table
 		
-		//String[] smallAns2 = Characters(Integer.parseInt((keyPadSubsequences(n/10)));
-		//String[] smallAns1 = keyPadSubsequences(n%10);
-		//String helper = Characters(n%10);
-		//String[] ans = new String[4 * smallAns2.length];
+		for(int i = 0; i < valueOfC.length(); i++) {
+			char charOfC = valueOfC.charAt(i);
+			
+			for(String s: smallRes) {
+				ans.add(s + charOfC);
+			}
+		}
 		
-		/*for(int i=0; i<smallAns2.length; i++)
-			ans[i] = smallAns2[i];
-		
-		for(int i=0; i<smallAns2.length; i++)
-			ans[i+smallAns2.length] = helper.charAt(i) + smallAns2[i];
-		*/
+		return ans;
 	}
 	
-	public static String Characters(int n) {
-		switch(n) {
-		case 2: return "abc";
-		case 3: return "def";
-		case 4: return "ghi";
-		case 5: return "jkl";
-		case 6: return "mno";
-		case 7: return "pqrs";
-		case 8: return "tuv";
-		case 9: return "wxyz";
-		default : break;
-		}
-		
-		return "";
-	}
-
 	public static void main(String[] args) {
-		int n = 234;
-		String[] ans = keyPadSubsequences(n);
-		for(int i=0; i<ans.length; i++) {
-			System.out.println(ans[i]);
-		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter keypad number: ");
+		String n = sc.next();
+		ArrayList<String> ans = keyPadSubsequences(n);
+		System.out.println(ans);
+		sc.close();
 	}
 }
