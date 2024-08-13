@@ -4,30 +4,51 @@ import java.util.*;
 
 public class BubbleSort {
 	public void bubbleSort(int [] arr) {
-		int temp=0;
 		
-		for(int i=0; i<arr.length; i++) {
-			for(int j=i+1; j<arr.length; j++) {
-				if(arr[j] < arr[i]) {
-					temp = arr[i];
-					arr[i] = arr[j];
-					arr[j] = temp;
-				}
-			}
-		}
+		//Optimized Bubble Sort
+		boolean swap;
 		
-		//OR
-		/*
-		for(int i=0; i<arr.length-1; i++) {
+		for(int i=0; i<arr.length-1; i++) {		//largest element at last
+			swap = false;
 			for(int j=0; j<arr.length-i-1; j++) {
 				if(arr[j] > arr[j+1]) {
-					temp = arr[j];
+					int temp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = temp;
+					swap = true;
 				}
 			}
+			if(swap == false) {//No swap means sorted
+				break;
+			}
 		}
-		*/	
+		
+		
+		 //Normal Bubble Sort
+//		int temp=0;
+//		
+//		for(int i=0; i<arr.length; i++) {	//Smallest element selecting and putting from start
+//			for(int j=i+1; j<arr.length; j++) {
+//				if(arr[i] > arr[j]) {
+//					temp = arr[i];
+//					arr[i] = arr[j];
+//					arr[j] = temp;
+//				}
+//			}
+//		}
+		
+		//OR
+		
+//		for(int i=0; i<arr.length-1; i++) {	//largest element selecting and putting at last
+//			for(int j=0; j<arr.length-i-1; j++) {
+//				if(arr[j] > arr[j+1]) {
+//					temp = arr[j];
+//					arr[j] = arr[j+1];
+//					arr[j+1] = temp;
+//				}
+//			}
+//		}
+//		*/
 	}
 	
 	public void print(int [] arr) {
