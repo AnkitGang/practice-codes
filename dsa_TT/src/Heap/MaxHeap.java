@@ -16,14 +16,14 @@ public class MaxHeap {
     }
 
     public int leftChild(int index){
-        return 2*index+1;
+        return 2*index + 1;
     }
 
     public int rightChild(int index){
-        return 2*index+2;
+        return 2*index + 2;
     }
 
-    public void swap(int index1,int index2){
+    public void swap(int index1, int index2){
         int temp = heap[index1];
         heap[index1] = heap[index2];
         heap[index2] = temp;

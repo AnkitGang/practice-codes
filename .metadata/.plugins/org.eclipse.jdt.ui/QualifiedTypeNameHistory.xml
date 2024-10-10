@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.awt.desktop.PreferencesEvent"/>
-    <fullyQualifiedTypeName name="Tree.BinaryTreeExample"/>
-    <fullyQualifiedTypeName name="java.util.TreeMap"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="javax.print.attribute.standard.ReferenceUriSchemesSupported"/>
     <fullyQualifiedTypeName name="Recursion.palindrome"/>
     <fullyQualifiedTypeName name="Queue.CircularQueueImplement"/>
@@ -18,19 +13,16 @@
     <fullyQualifiedTypeName name="java.awt.HeadlessException"/>
     <fullyQualifiedTypeName name="java.lang.Character"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="BinarySearchTree.BSTNode"/>
     <fullyQualifiedTypeName name="BinarySearchTree.BSTOperations"/>
     <fullyQualifiedTypeName name="java.time.zone.ZoneOffsetTransitionRule"/>
     <fullyQualifiedTypeName name="BackTracking.letterCombinationsOfAPhoneNumber"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="javax.security.auth.callback.CallbackHandler"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="tree.StructurallyIdentical"/>
     <fullyQualifiedTypeName name="java.util.concurrent.LinkedBlockingDeque"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="tree.NextLargerElement"/>
     <fullyQualifiedTypeName name="java.awt.Frame"/>
     <fullyQualifiedTypeName name="java.awt.Image"/>
@@ -58,6 +50,14 @@
     <fullyQualifiedTypeName name="java.time.chrono.MinguoChronology"/>
     <fullyQualifiedTypeName name="string.compressString"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.ComponentInputMapUIResource"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="priorityQueue.PriorityQueueImplement.Student"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.SimpleTimeZone"/>
 </qualifiedTypeNameHistroy>
